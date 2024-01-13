@@ -7,12 +7,12 @@
 }
 
 body {
-    background-color: #f7f0f0;
+    background-color: #f6f8fc;
 }
 
 .content {
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     padding: 1rem;
     background-color: #FFF;
 }
