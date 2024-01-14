@@ -10,12 +10,26 @@ body {
     background-color: #f6f8fc;
 }
 
+
+h1 {
+    text-align: center;
+}
+
+.search {
+    text-align: center;
+}
+
+body section a {
+    text-decoration: none;
+}
+
 .content {
     width: 100vw;
     height: 100vh;
     padding: 1rem;
     background-color: #FFF;
 }
+
 
 @media screen and (min-width: 992px) {
     .content {

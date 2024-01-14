@@ -6,3 +6,9 @@ class Pokemon {
     types = [];
     photo;
 }
+class AboutPokemon {
+    species;
+    ability;
+    height;
+    weight;
+}
