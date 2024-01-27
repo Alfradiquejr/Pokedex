@@ -11,15 +11,15 @@
 <body>
     <header class="header__content">
         <h1 id="pokedexTitle"><a href="">Pokedex</a></h1>
-    </header>
+    </header><!--header__content-->
     
     <nav>
         <div class="header__input">
             <input id="searchInput" type="text" placeholder="Digite o nome ou ID do pokémon!">
-        </div>
+        </div><!--header__input-->
         <div class="header__search">
             <button id="searchButton"">Search</button>
-        </div>
+        </div><!--header__search-->
     </nav>
     
     <section id="pokemonInfo" class="content">
@@ -32,12 +32,8 @@
             <button id="loadMoreButton" type="button">
                 Load More
             </button>
-        </div>
-    </section>
-
-    <div id="resultPokemon" class="hidden">
-
-    </div><!--resultPokemon // hidden-->
+        </div><!--pagination-->
+    </section><!--content-->
 
     <!-- Nosso JS -->
     <script src="/assets/js/pokemon-model.js"></script>
