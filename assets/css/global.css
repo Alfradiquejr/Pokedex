@@ -27,6 +27,12 @@ nav {
     margin-bottom: 2rem;
 }
 
+.header__content h1 a {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #3d1f1fc4;
+}
+
 .header__input {
     align-items: center;
     width: 20rem;

@@ -8,6 +8,7 @@ const maxRecords = 151
 const limit = 10
 let offset = 0;
 
+// FUNÇÃO PARA TRAZER DINÂMICA PARA CADA POKÉM COM SEU NOME, ID,TIPO, ETC...
 function convertPokemonToLi(pokemon) {
     return `
         <li class="pokemon ${pokemon.type}">
@@ -26,15 +27,16 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
+// FUNÇÃO PARA LIMITAR O CARREGAMENTO DOS POKÉMONS
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
         pokemonList.innerHTML += newHtml
     })
 } 
-
 loadPokemonItens(offset, limit)
 
+// FILTRAR MAIS POKÉMONS AO CLICAR EM LOADMORE
 loadMoreButton.addEventListener('click', () => {
     offset += limit
     const qtdRecordsWithNexPage = offset + limit
@@ -49,7 +51,7 @@ loadMoreButton.addEventListener('click', () => {
     }
 })
 
-
+// FUNÇÃO PARA FILTRAR OS POKÉMONS POR NOME E/OU ID
 function filterPokemon() {
     const searchText = searchInput.value.toLowerCase();
     const filteredPokemon = pokemonList.querySelectorAll('.pokemon');
@@ -66,7 +68,18 @@ function filterPokemon() {
     });
 }
 
+// FILTRAR AO CLICAR EM SEARCH
 searchButton.addEventListener('click', filterPokemon);
+
+
+// RETORNAR PÁGINA INICIAL AO CLICAR NO H1
+pokedexTitle.addEventListener('click', () => {
+    searchInput.value = '';
+    filterPokemon();
+    if (pokemon.length === 0) {
+        loadPokemonItens();
+    }
+})
 
 
 
