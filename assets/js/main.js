@@ -1,5 +1,8 @@
-const pokemonList = document.getElementById('pokemonList')
-const loadMoreButton = document.getElementById('loadMoreButton')
+const pokemonList = document.getElementById('pokemonList');
+const loadMoreButton = document.getElementById('loadMoreButton');
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+
 
 const maxRecords = 151
 const limit = 10
@@ -17,7 +20,7 @@ function convertPokemonToLi(pokemon) {
                 </ol>
 
                 <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
+                alt="${pokemon.name}">
             </div>
         </li>
     `
@@ -28,7 +31,7 @@ function loadPokemonItens(offset, limit) {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
         pokemonList.innerHTML += newHtml
     })
-}
+} 
 
 loadPokemonItens(offset, limit)
 
@@ -45,3 +48,25 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+
+function filterPokemon() {
+    const searchText = searchInput.value.toLowerCase();
+    const filteredPokemon = pokemonList.querySelectorAll('.pokemon');
+
+    filteredPokemon.forEach(pokemon => {
+        const pokemonName = pokemon.querySelector('.name').textContent.toLowerCase();
+        const pokemonNumber = pokemon.querySelector('.number').textContent.toLowerCase();
+
+        if (pokemonName.includes(searchText) || pokemonNumber.includes(searchText)) {
+        pokemon.style.display = 'block';
+        } else {
+        pokemon.style.display = 'none';
+        }
+    });
+}
+
+searchButton.addEventListener('click', filterPokemon);
+
+
+

@@ -9,13 +9,20 @@
     <link rel="stylesheet" href="assets/css/pokedex.css">
 </head>
 <body>
-    <h1>Pokedex</h1>
-    <form action="" class="search">
-        <input type="search" id="searchInput" placeholder="Digite o nome ou ID do pokémon!">
-        <button class="searchButton">Search</button>
-    </form>
-    <section class="content">
-        <a href="pokemon.html">
+    <header class="header__content">
+        <h1>Pokedex</h1>
+    </header>
+    
+    <nav>
+        <div class="header__input">
+            <input id="searchInput" type="text" placeholder="Digite o nome ou ID do pokémon!">
+        </div>
+        <div class="header__search">
+            <button id="searchButton"">Search</button>
+        </div>
+    </nav>
+    
+    <section id="pokemonInfo" class="content">
             <ol id="pokemonList" class="pokemons">
                 <!-- ..... Pokemons here ..... -->
             </ol>
@@ -27,6 +34,10 @@
             </button>
         </div>
     </section>
+
+    <div id="resultPokemon" class="hidden">
+
+    </div><!--resultPokemon // hidden-->
 
     <!-- Nosso JS -->
     <script src="/assets/js/pokemon-model.js"></script>
